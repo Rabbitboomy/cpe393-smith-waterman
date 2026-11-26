@@ -1,0 +1,4 @@
+# Keep inputs and golden scores byte-identical on Windows and Linux.
+data/** text eol=lf
+*.sh text eol=lf
+Makefile text eol=lf

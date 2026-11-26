@@ -1,0 +1,11 @@
+CUDA driver API : 13.3
+CUDA runtime    : 13.3
+
+GPU 0           : NVIDIA GeForce RTX 5060 Laptop GPU
+compute cap.    : 12.0  (build needs sm_120)
+SMs             : 26
+global memory   : 7.96 GiB
+shared mem/block: 48 KiB (opt-in max 99 KiB)
+constant memory : 64 KiB
+warp size       : 32
+async engines   : 1 (copy/compute overlap for v4 needs >= 1)
