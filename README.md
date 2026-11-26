@@ -8,6 +8,8 @@ CPE 393 GPU Programming final project — team **WaWaWeeWa**
 | Titiwut Phokaeo | 66070503428 | CUDA kernels v0 (naive), v1 (shared memory), v2 (constant memory); GPU driver; README merge |
 | Puwanut Theeranuluk | 66070503477 | Kernels v3 (warp shuffle), v4 (streams); benchmark harness, plots, Nsight profiling, report assembly |
 
+> **Team members: start with [TEAM.md](TEAM.md)** — setup, rules, task list and schedule.
+>
 > **Status: skeleton.** Kernels are placeholders that write `-1`; `verify.py` fails until they are implemented.
 > Sections marked _TODO_ are filled in as the project progresses.
 
@@ -42,12 +44,15 @@ binary runs on every GPU the team uses. Override with `-DSW_CUDA_ARCHS=native` (
 
 ## Build
 
-**Windows (PowerShell, Visual Studio 2022 + CUDA installed):**
-```powershell
-cmake -B build
-cmake --build build --config Release -j
-.\build\bin\devinfo.exe
+**Windows** — open **x64 Native Tools Command Prompt for VS 2022** (from the Start menu; it puts the
+64-bit MSVC compiler on PATH), then:
+```bat
+cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+build\bin\devinfo.exe
 ```
+Needs Visual Studio 2022 or VS Build Tools 2022 with "Desktop development with C++", CUDA ≥ 12.8, CMake and Ninja
+(`winget install Kitware.CMake Ninja-build.Ninja`). Ninja avoids depending on CUDA's Visual Studio integration.
 
 **Linux:**
 ```bash
